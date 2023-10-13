@@ -3,3 +3,4 @@ env
 .idea/
 /project/migrations/
 /project/pyproject.toml
+/project/.coverage
