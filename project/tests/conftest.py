@@ -9,10 +9,10 @@ from app.config import get_setting, Settings
 
 
 def get_setting_override():
-    return Settings(testing=1, database_url=os.environ.get('DATABASE_TEST_URL'))
+    return Settings(testing=1, database_url=os.environ.get("DATABASE_TEST_URL"))
 
 
-@pytest.fixture(scope='module')
+@pytest.fixture(scope="module")
 def test_app():
     app = create_application()
     app.dependency_overrides[get_setting] = get_setting_override
@@ -20,7 +20,7 @@ def test_app():
         yield test_client
 
 
-@pytest.fixture(scope='module')
+@pytest.fixture(scope="module")
 def test_app_with_db():
     app = create_application()
     app.dependency_overrides[get_setting] = get_setting_override
